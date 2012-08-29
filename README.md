@@ -1,0 +1,4 @@
+basic.structure
+===============
+
+Basic structure
