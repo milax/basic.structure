@@ -41,7 +41,7 @@
 
         function onFetch(ngApi) {
             return new Promise((resolve) => {
-                const $sportIframeContainer = document.getElementById('sport-container');
+                const $sportIframeContainer = document.getElementById('sbtechIframeContainer');
 
                 console.log('%c[sportbet] Executing open sport onFetch hook', 'color: green');
 
