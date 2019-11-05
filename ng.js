@@ -12,7 +12,7 @@ var getFrameworkPreferences=function(){document.domain="sazka.cz";var e=window.l
 
 function onFetchHackFunc(ngApi) {
     return new Promise(function (resolve) {
-      var $sportIframeContainer = document.getElementById('sport-container');
+      var $sportIframeContainer = document.getElementById('sbtechIframeContainer');
       console.log('%c[sportbet] Executing open sport onFetch hook', 'color: green');
       ngApi.openSport($sportIframeContainer).then(function (sbtechApi) {
         var $betSlipCounterView = document.getElementById('bet-slip-count');
