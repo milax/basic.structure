@@ -41,4 +41,4 @@ function onFetchHackFunc(ngApi) {
   }
 
 
-BUILD_ID = "ssaa";
+window.BUILD_ID = "ssaa";
