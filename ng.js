@@ -15,10 +15,8 @@ function onFetchHackFunc(ngApi) {
       var $sportIframeContainer = document.getElementById('sbtechIframeContainer');
       console.log('%c[sportbet] Executing open sport onFetch hook', 'color: green');
       ngApi.openSport($sportIframeContainer).then(function (sbtechApi) {
-        var $betSlipCounterView = document.getElementById('bet-slip-count');
-        var $goToBetSlipBtn = document.getElementById('bet-slip-btn');
         sbtechApi.addEventListener('betSlipCountChange', function (eventData) {
-          $betSlipCounterView.innerText = eventData.count;
+          console.log('%c[sportbet] event "betSlipCountChange"\n', 'color:green', eventData);            
         });
         sbtechApi.addEventListener('setDeviceTypeAndOrientation', function (eventData) {
           console.log('%c[sportbet] event "setDeviceTypeAndOrientation"\n', 'color:green', eventData);
@@ -31,9 +29,6 @@ function onFetchHackFunc(ngApi) {
         });
         sbtechApi.addEventListener('isBetSlipView', function (isVisible) {
           console.log('%c[sportbet] event "isBetSlipView"\nBet slip window is opened in sbtech:', 'color:green', isVisible);
-        });
-        $goToBetSlipBtn.addEventListener('click', function () {
-          sbtechApi.goToBetSlip();
         });
         resolve();
       });
