@@ -10,6 +10,8 @@
     Cashier action has been requested by the client
 */
 function Cashier(bonusPolicyId) {
+	console.log("Callback.js: Cashier");
+	debugger;
     // get query string
     var additionalParams = [{ key: "referral", value: "true" }, { key: "action", value: "gamecashier" }];
     var url = generateUrl(additionalParams, true);
@@ -25,6 +27,8 @@ function Cashier(bonusPolicyId) {
     Switch to money action has been requested by the client
 */
 function SwitchToMoney() {
+	console.log("Callback.js: SwitchToMoney");
+	debugger;	
     var url = window.location.href;
 
     var canUserPlayMoneyMode = !!getQueryString('ISID') // player is logged in 
@@ -63,6 +67,8 @@ function ContactUs() {
     Logout action has been requested by the client
 */
 function Logout() {
+	console.log("Callback.js: Logout");
+	debugger;		
     var additionalParams = [{ key: "referral", value: "true" }, { key: "action", value: "logout" }];
     generateUrlAndRedirect(additionalParams, false);
 }
@@ -97,6 +103,8 @@ function DepositLimits(){
     Session Timeout flow
 */
 function SessionTimeout(event) {
+	console.log("Callback.js: SessionTimeout");
+	debugger;		
     var action;
     switch (event) {
         case "LoginExpired":
@@ -151,6 +159,8 @@ function MessagePopUpClosed() {
 	Called whenever the game should be reloaded
 */
 function ReloadGame() {
+	console.log("Callback.js: ReloadGame");
+	debugger;		
 	var url = removeQueryString("FreeGamePlayerBonusID", window.location.href)
 	redirectToLink(url);
 }
@@ -161,7 +171,8 @@ var IsExternalGame = false;
     Called whenever the player exits the game
 */
 function Lobby(lobbyUrl) {
-    debugger;
+	console.log("Callback.js: Lobby");
+	debugger;	
     // set query string parameters    
     var url = getBaseUrl();
     if (!url && lobbyUrl) {
