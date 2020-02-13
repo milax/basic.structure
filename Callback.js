@@ -11,7 +11,6 @@
 */
 function Cashier(bonusPolicyId) {
 	console.log("Callback.js: Cashier");
-	debugger;
     // get query string
     var additionalParams = [{ key: "referral", value: "true" }, { key: "action", value: "gamecashier" }];
     var url = generateUrl(additionalParams, true);
@@ -28,7 +27,6 @@ function Cashier(bonusPolicyId) {
 */
 function SwitchToMoney() {
 	console.log("Callback.js: SwitchToMoney");
-	debugger;	
     var url = window.location.href;
 
     var canUserPlayMoneyMode = !!getQueryString('ISID') // player is logged in 
@@ -68,7 +66,6 @@ function ContactUs() {
 */
 function Logout() {
 	console.log("Callback.js: Logout");
-	debugger;		
     var additionalParams = [{ key: "referral", value: "true" }, { key: "action", value: "logout" }];
     generateUrlAndRedirect(additionalParams, false);
 }
@@ -104,7 +101,6 @@ function DepositLimits(){
 */
 function SessionTimeout(event) {
 	console.log("Callback.js: SessionTimeout");
-	debugger;		
     var action;
     switch (event) {
         case "LoginExpired":
@@ -160,7 +156,6 @@ function MessagePopUpClosed() {
 */
 function ReloadGame() {
 	console.log("Callback.js: ReloadGame");
-	debugger;		
 	var url = removeQueryString("FreeGamePlayerBonusID", window.location.href)
 	redirectToLink(url);
 }
@@ -172,7 +167,6 @@ var IsExternalGame = false;
 */
 function Lobby(lobbyUrl) {
 	console.log("Callback.js: Lobby");
-	debugger;	
     // set query string parameters    
     var url = getBaseUrl();
     if (!url && lobbyUrl) {
