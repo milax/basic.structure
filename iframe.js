@@ -143,7 +143,7 @@
                 }))
             },
             postMessageHandler: function(e) {
-                console.log('postMessageHandler');
+                console.log('[postMessageHandler]', e);
                 var t = e.data,
                     i = t.type,
                     o = t.payload;
